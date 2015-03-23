@@ -18,12 +18,17 @@ import javax.persistence.OneToOne;
  */
 @Entity
 public class Pessoa implements Serializable {
+    @OneToOne(mappedBy = "pessoa")
+    private Cliente cliente;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private String cpf;
+    private String rua;
+    private String bairro;
+    private String cidade;
     @OneToOne
     private Endereco endereco;
 
@@ -40,6 +45,54 @@ public class Pessoa implements Serializable {
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @return the rua
+     */
+    public String getRua() {
+        return rua;
+    }
+
+    /**
+     * @param rua the rua to set
+     */
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    /**
+     * @return the bairro
+     */
+    public String getBairro() {
+        return bairro;
+    }
+
+    /**
+     * @param bairro the bairro to set
+     */
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    /**
+     * @return the cidade
+     */
+    public String getCidade() {
+        return cidade;
+    }
+
+    /**
+     * @param cidade the cidade to set
+     */
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     /**
@@ -92,15 +145,10 @@ public class Pessoa implements Serializable {
 
     @Override
     public String toString() {
-        return "modelos.Pessoa[ id=" + id + "nome=" + nome + "cpf=" + cpf + " ]";
+        return "modelos.Pessoa[ id=" + id + "nome=" + nome + "cpf=" + cpf + "rua=" + rua + "bairro=" + bairro + "cidade=" + cidade + " ]";
     }
 
-    /**
-     * @return the nome
-     */
-    public String getNome() {
-        return nome;
-    }
+    
 
     
     
