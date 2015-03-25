@@ -5,6 +5,7 @@
  */
 package beans;
 
+import dao.EnderecoJpaController;
 import dao.PessoaJpaController;
 import dao.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -19,33 +20,39 @@ import util.JPAUtil;
  * @author jefferson
  */
 public class PessoaMB {
-    private Pessoa p = new Pessoa();
+    private Pessoa pessoa = new Pessoa();
     private PessoaRB negocio = new PessoaRB();
+    private EnderecoRB negocioEndereco = new EnderecoRB();
     private PessoaJpaController dao = new PessoaJpaController(JPAUtil.EMF);
+    private EnderecoJpaController daoEndereco = new EnderecoJpaController(JPAUtil.EMF);
+    private Endereco endereco = new Endereco();
 
     /**
      * Creates a new instance of PessoaMB
      */
     public PessoaMB() {
+        
     }
 
     /**
      * @return the p
      */
-    public Pessoa getP() {
-        return p;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
     /**
      * @param p the p to set
      */
-    public void setP(Pessoa p) {
-        this.p = p;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
     
     public void salvar(){
                 
-		negocio.inserir(p);
+                daoEndereco.create(getEndereco());
+                pessoa.setEndereco(getEndereco());
+		negocio.inserir(getPessoa());
                 //negocioEndereco.inserir(e);
     }
     
@@ -56,5 +63,13 @@ public class PessoaMB {
     public void removerPessoa(Pessoa p) throws NonexistentEntityException{
 		dao.destroy(p.getId());
 	}
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
     
 }

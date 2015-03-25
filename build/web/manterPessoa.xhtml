@@ -36,15 +36,15 @@
                             <h:panelGrid columns="2">
                                 
                                 <h:outputText value="Nome: "/>
-                                <p:inputText id="nome" value="#{pessoaMB.p.nome}" maxlength="50" />
+                                <p:inputText id="nome" value="#{pessoaMB.pessoa.nome}" maxlength="50" />
                                 <h:outputText value="CPF: "/>
-                                <p:inputText id="cpf" value="#{pessoaMB.p.cpf}" maxlength="50" />
+                                <p:inputText id="cpf" value="#{pessoaMB.pessoa.cpf}" maxlength="50" />
                                 <h:outputText value="Rua: "/>
-                                <p:inputText id="rua" value="#{pessoaMB.p.rua}" maxlength="50"/>
+                                <p:inputText id="rua" value="#{pessoaMB.endereco.rua}" maxlength="50"/>
                                 <h:outputText value="Bairro: "/>
-                                <p:inputText id="bairro" value="#{pessoaMB.p.bairro}" maxlength="50"/>
+                                <p:inputText id="bairro" value="#{pessoaMB.endereco.baiiro}" maxlength="50"/>
                                 <h:outputText value="Cidade: "/>
-                                <p:inputText id="cidade" value="#{pessoaMB.p.cidade}" maxlength="50"/>
+                                <p:inputText id="cidade" value="#{pessoaMB.endereco.cidade}" maxlength="50"/>
                                 
 
                                 <p:commandButton value="GRAVAR" action="#{pessoaMB.salvar()}" />

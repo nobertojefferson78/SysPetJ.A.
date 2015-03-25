@@ -5,6 +5,7 @@
     <class>modelos.Endereco</class>
     <class>modelos.Pessoa</class>
     <class>modelos.Cliente</class>
+    <class>modelos.Animal</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SysPetJA"/>

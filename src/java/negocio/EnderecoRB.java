@@ -11,10 +11,10 @@ public class EnderecoRB {
 		dao = new EnderecoJpaController(JPAUtil.EMF);
 	}
 	
-	public void inserir(Endereco c){
+	public void inserir(Endereco e){
 		try {
-			dao.create(c);
-		} catch (Exception e) {
+			dao.create(e);
+		} catch (Exception ex) {
 			// TODO: handle exception
 		}
 	}
