@@ -29,8 +29,6 @@ public class Pessoa implements Serializable {
     private String rua;
     private String bairro;
     private String cidade;
-    @OneToOne
-    private Endereco endereco;
 
     public Long getId() {
         return id;
@@ -109,19 +107,7 @@ public class Pessoa implements Serializable {
         this.cpf = cpf;
     }
 
-    /**
-     * @return the endereco
-     */
-    public Endereco getEndereco() {
-        return endereco;
-    }
 
-    /**
-     * @param endereco the endereco to set
-     */
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 
     @Override
     public int hashCode() {
